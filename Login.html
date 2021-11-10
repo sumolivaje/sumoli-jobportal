@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<style>
+body
+{
+ background-image:url(login.jpg);
+background-size:cover;
+ background-repeat: no-repeat;
+background-attachment: fixed; 
+ background-size: 100% 100%;
+}
+
+.login{
+width:800px;
+background-color:rgb(0,0,0,0.6);
+margin:auto;
+color:#FFFFFF;
+padding:10px 0px 10px 0px;
+text-align:center;
+border-radius:15px 15px 0px 0px;
+}
+
+</style>
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+a{
+  display: inline-block;
+  background-color: #ffb6c1;
+  color:white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+   
+}
+.form{
+   height: 200px;
+   width: 50%;
+}
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #fa7b62;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+input[type=submit]:hover {
+  background-color: #fa7b62;
+}
+
+div {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+function validform(){
+	var name = document.myform.name.value;
+	var password1 = document.myform.password1.value;
+	var password2 = document.myform.password2.value;
+	
+	if(name == null || name == ""){
+		alert("name cannot be blank");
+		return false;
+	}
+	
+    if(password1.length<6){
+		alert("password must be greater than 6 char");
+		return false;
+	}
+	else if(password1 == password2){
+		return true;
+	}else{
+		alert("Password must be same");
+		return false;
+	}
+			
+}
+</script>
+
+</head>
+<body>
+
+<center><h2>Login</h2></center>
+
+
+<div>
+
+<form name="myform" method="post" onsubmit="return validform()">
+    <label>Enter your name</label>
+    <input type="text" name="name" placeholder="Enter your name...">
+    
+    <label>Enter your password</label>
+    <input type="password" name="password1" placeholder="Enter your password...">
+    
+    <label>Re-enter your password</label>
+    <input type="password" name="password2" placeholder="Re-enter your password...">
+    
+   <input type="submit" value="Login">
+
+</form>
+<center><h3><a name="reg" href="index.html">Home</a></h3></center>
+
+</div>
+</body>
+</html>

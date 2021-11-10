@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<style>
+body
+{
+ background-image:url(register.jpg);
+background-size:cover;
+ background-repeat: no-repeat;
+background-attachment: fixed; 
+ background-size: 100% 100%;
+}
+</style>
+<style>
+
+.form{
+   height: 200px;
+   width: 50%;
+}
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #fa7b62;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #fa7b62;
+}
+
+div {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+}
+ a{
+   background-color: #fa7b62;
+   color:black;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+ }
+</style>
+
+<script type="text/javascript">
+
+function validform(){
+	var name = document.myform.name.value;
+	var email = document.myform.email.value;
+	var ampposition = email.indexOf('@');
+	var dotposition = email.indexOf('.');
+	var contact = document.myform.contact.value;
+	var password1 = document.myform.password1.value;
+	var password2 = document.myform.password2.value;
+	
+	if(name == null || name == ""){
+		alert("name cannot be blank");
+		return false;
+	}
+	if(ampposition<1||dotposition<ampposition+2||dotposition+2>=email.length){
+		alert("email not valid");
+		return false;
+	}
+    if(isNaN(contact)){
+		alert=("enter numberic value");
+		return false;
+	}
+	else if(contact.length != 10){
+		alert("mobile number must be 10 digit only");
+	    return false;
+	}
+    
+     if(password1.length<8){
+		alert("password must be greater than 8 char");
+		return false;
+	}
+	else if(password1 == password2){
+		return true;
+	}else{
+		alert("Password must be same");
+		return false;
+	}
+			
+}
+
+
+</script>
+</head>
+<body>
+<center><h2>Register</h2></center>
+<div>
+ <form method="post" name="myform" onsubmit="return validform()">
+    <label>Enter your name</label>
+    <input type="text" name="name" placeholder="your name..">
+    
+    <label>Enter your email</label>
+    <input type="text" name="email" placeholder="Your mail..">
+    
+    <label>Enter your mobile number</label>
+    <input type="number" name="contact" placeholder="Your contact number..">
+    
+    <label>Enter your address</label>
+    <input type="text" name="address" placeholder="Your address..">
+    
+    <label>Enter your password</label>
+    <input type="password" name="password1" placeholder="Your password...">
+    
+    <label>Re-enter your password</label>
+    <input type="password" name="password2" placeholder="Re-enter your password...">
+    
+   <a href="Login.html"> <input type="button" value="Sign Up" ></a>
+   
+   
+  </form>
+</diV>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+functionvalid()
+	var location= document.frm.location.value;
+	var kilometer= document.frm.kg.value;
+	var facility= document.frm.facility.value;
+
+	if(size==""){
+	alert("Enter location");
+	return false;
+		}
+	else if(cost==""){
+		alert("Enter facility");
+		return false;
+		}
+
+
+
+</script>
+</head>
+<body>
+
+<form name="frm" action="Add Job" onsubmit="return valid()">
+<table class="center">
+<tr><th colspan="2">Add new job</th></tr>
+<tr><td>Enter Job Location :</td><td><input type="text"name="size"></td></tr>
+<tr><td>Enter kilometer :</td><td><input type="text" name="kg"></td></tr>
+<tr><td>Facility :</td><td><input type="text" name="facility"></td></tr>
+<tr><td colspan="2"><input type="submit" value="Create"></td></tr>
+</table>
+</form>
+</body>
+</html>
